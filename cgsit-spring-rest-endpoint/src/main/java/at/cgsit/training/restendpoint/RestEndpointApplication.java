@@ -3,8 +3,10 @@ package at.cgsit.training.restendpoint;
 import org.springframework.boot.Banner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.context.annotation.ComponentScan;
 
 @SpringBootApplication
+@ComponentScan("at.cgsit.training.persistence.mongo.repository")
 public class RestEndpointApplication {
 
     public static void main(String[] args) {
