@@ -21,31 +21,11 @@ import org.springframework.jms.support.converter.MessageConverter;
 import org.springframework.jms.support.converter.MappingJackson2MessageConverter;
 import org.springframework.jms.support.converter.MessageType;
 
-
-import javax.jms.ConnectionFactory;
-
-// @ComponentScan("at.cgsit.training.persistence.mongo.repository")
-/*@ComponentScan({
-    "at.cgsit.training.persistence.mongo.model",
-    "at.cgsit.training.persistence.mongo.config",
-    "at.cgsit.training.persistence.mongo.repository",
-    "at.cgsit.training.restendpoint"})
-
-@ComponentScan(basePackages={
-    "at.cgsit",
-    "at.cgsit.training.restendpoint"})
-
-@ComponentScan("at.cgsit")
-    */
-
-
 // @EnableAutoConfiguration
 // @EnableJpaRepositories(basePackages="com.sivalabs.jcart")
 // @EntityScan(basePackages="at.cgsit")
 
 @SpringBootApplication
-@EnableJms
-@Configuration
 @ComponentScan(basePackages="at.cgsit")
 @EnableMongoRepositories(basePackages="at.cgsit.training.persistence.mongo.repository")
 public class RestEndpointApplication {

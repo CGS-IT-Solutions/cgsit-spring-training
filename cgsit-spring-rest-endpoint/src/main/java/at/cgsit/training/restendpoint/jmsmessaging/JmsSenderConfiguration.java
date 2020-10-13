@@ -8,7 +8,7 @@ import org.springframework.jms.connection.CachingConnectionFactory;
 import org.springframework.jms.core.JmsTemplate;
 
 @Configuration
-public class JmsConfiguration {
+public class JmsSenderConfiguration {
 
     @Value("${activemq.broker-url}")
     private String brokerUrl;
