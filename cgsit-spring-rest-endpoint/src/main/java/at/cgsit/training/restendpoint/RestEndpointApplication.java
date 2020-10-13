@@ -27,7 +27,7 @@ import org.springframework.jms.support.converter.MessageType;
 
 @SpringBootApplication
 @ComponentScan(basePackages="at.cgsit")
-@EnableMongoRepositories(basePackages="at.cgsit.training.persistence.mongo.repository")
+// @EnableMongoRepositories(basePackages="at.cgsit.training.persistence.mongo.repository")
 public class RestEndpointApplication {
 
   static Logger logger = LoggerFactory.getLogger(RestEndpointApplication.class);
