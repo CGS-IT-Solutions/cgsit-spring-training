@@ -25,13 +25,11 @@ public class SimpleRestController {
     loadDatabaseMongoDb.initDatabase();
   }
 
-
   @GetMapping("/properties/{property}")
   String getProperty(@PathVariable String property) {
     logger.info("getProperty /properties called with value {}", property);
     logger.info("Working Directory = " + System.getProperty("user.dir"));
     return "success";
   }
-
 
 }

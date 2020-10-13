@@ -5,7 +5,7 @@ import org.springframework.data.annotation.Id;
 public class ChatMessageMongoDb {
 
   @Id
-  private Long id;
+  private String id;
 
   private MessageType type;
 
@@ -15,15 +15,13 @@ public class ChatMessageMongoDb {
 
   private String recipient;
 
-  public void setId(Long id) {
+  public void setId(String id) {
     this.id = id;
   }
 
-  public Long getId() {
+  public String getId() {
     return id;
   }
-
-
 
   public MessageType getType() {
     return type;

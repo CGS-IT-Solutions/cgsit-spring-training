@@ -47,7 +47,7 @@
                 <artifactId>spring-boot-maven-plugin</artifactId>
             </plugin>
         </plugins>
-        <finalName>cgsit-spring-rest-endpoint</finalName>
+        <!--finalName>cgsit-spring-rest-endpoint</finalName -->
     </build>
     
 </project>
