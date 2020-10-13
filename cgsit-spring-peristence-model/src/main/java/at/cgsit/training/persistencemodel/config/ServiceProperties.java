@@ -2,7 +2,7 @@ package at.cgsit.training.persistencemodel.config;
 
 import org.springframework.boot.context.properties.ConfigurationProperties;
 
-@ConfigurationProperties("service")
+// @ConfigurationProperties("service")
 public class ServiceProperties {
 
   /**
