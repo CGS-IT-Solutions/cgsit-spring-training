@@ -6,10 +6,7 @@ import at.cgsit.training.persistence.mongo.repository.ChatMessageMongoDbReposito
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import javax.annotation.PostConstruct;
 import javax.annotation.PreDestroy;
@@ -37,9 +34,18 @@ public class SimpleMongoDbRestController {
   }
 
   @GetMapping("/chatmessages")
-  public List<ChatMessageMongoDb> all() {
+  public @ResponseBody List<ChatMessageMongoDb> all() {
     return chatMessageMongoDbRepository.findAll();
   }
 
+
+  @GetMapping("/chatmessages/{id}")
+  ChatMessageMongoDb one(@PathVariable String id) {
+    return chatMessageMongoDbRepository.findAll().stream().findAny().orElseThrow( () -> new RuntimeException("not found"));
+
+    /*return chatMessageMongoDbRepository.findById(id)
+        .orElseThrow(() -> new RuntimeException("error with id not found"));
+     */
+  }
 
 }
