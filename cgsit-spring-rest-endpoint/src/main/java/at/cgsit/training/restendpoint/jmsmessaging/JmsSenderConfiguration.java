@@ -15,17 +15,18 @@ public class JmsSenderConfiguration {
 
     @Bean
     public ActiveMQConnectionFactory senderActiveMQConnectionFactory() {
-      ActiveMQConnectionFactory activeMQConnectionFactory =
-          new ActiveMQConnectionFactory();
-      activeMQConnectionFactory.setBrokerURL(brokerUrl);
 
-      return activeMQConnectionFactory;
+      ActiveMQConnectionFactory factory = new ActiveMQConnectionFactory();
+      factory.setBrokerURL(brokerUrl);
+      factory.setUserName("cgsDemoBrokerUser");
+      factory.setPassword("cgsDemoBroker1224");
+
+      return factory;
     }
 
     @Bean
     public CachingConnectionFactory cachingConnectionFactory() {
-      return new CachingConnectionFactory(
-          senderActiveMQConnectionFactory());
+      return new CachingConnectionFactory(senderActiveMQConnectionFactory());
     }
 
     @Bean

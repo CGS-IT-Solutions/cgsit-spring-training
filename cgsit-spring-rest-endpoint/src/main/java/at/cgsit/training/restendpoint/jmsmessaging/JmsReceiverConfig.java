@@ -17,10 +17,12 @@ public class JmsReceiverConfig {
   @Bean
   public ActiveMQConnectionFactory receiverActiveMQConnectionFactory() {
 
-    ActiveMQConnectionFactory activeMQConnectionFactory = new ActiveMQConnectionFactory();
-    activeMQConnectionFactory.setBrokerURL(brokerUrl);
+    ActiveMQConnectionFactory factory = new ActiveMQConnectionFactory();
+    factory.setBrokerURL(brokerUrl);
+    factory.setUserName("cgsDemoBrokerUser");
+    factory.setPassword("cgsDemoBroker1224");
 
-    return activeMQConnectionFactory;
+    return factory;
   }
 
   @Bean
